@@ -6,7 +6,7 @@ resource "aws_secretsmanager_secret_version" "gitlab-docker-registry-version" {
     secret_id     = aws_secretsmanager_secret.gitlab-docker-registry.id
     secret_string = jsonencode({
         username = "ecs-token"
-        password = "Fy5mgo-w878XU9yNXPy5"
+        password = var.gitlab_docker_registry_token
     })
 }
 
